@@ -8,7 +8,7 @@ class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
-        this.mongoose = mongoose;
+        /*this.mongoose = mongoose;*/
 
         this.middlewares();
         this.listen();
