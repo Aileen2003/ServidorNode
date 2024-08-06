@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const https = require('https');
+/*const https = require('https');*/
 const fs = require('fs');
 const mongoose = require('mongoose');
 
@@ -13,7 +13,7 @@ class Server {
         this.middlewares();
         this.listen();
         this.routes();
-        this.conectarMongoose();
+        /*this.conectarMongoose();*/
     }
 
     conectarMongoose() {
@@ -100,10 +100,11 @@ class Server {
     }
 
     listen() {
-        https.createServer({
+        /*https.createServer({
             key: fs.readFileSync('cert.key'),
             cert: fs.readFileSync('cert.crt'),
-        }, this.app).listen(this.port, () => {
+        }, */
+        this.app.listen(this.port, () => {
             console.log('https://127.0.0.1:' + this.port);
         });
     }
